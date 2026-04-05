@@ -9,7 +9,7 @@
 
 **Методология:** Mixed-method анализ с применением:
 - Weak supervision для автоматической разметки
-- Multi-label классификация (4 категории дискурса)
+- Multi-label классификация (4 категории)
 - Статистические тесты (Mann-Whitney U, Chi-square)
 - Тематическое моделирование (LDA)
 
@@ -31,8 +31,11 @@ parsers/
 scripts/
 └── modelv12.py              # Основной анализ корпуса
 
-README.md
-analysis_results.md
+visual/
+└── visualization_module.py  # Визуализация
+
+README.md                    # Этот файл
+analysis_results.md          # Результаты исследования
 ```
 
 ---
@@ -58,8 +61,6 @@ pip install pandas numpy scikit-learn scipy gensim nltk pymorphy2 pymorphy2-dict
 ```bash
 python step1_parse_VKv2.py
 ```
-
-
 **Важно:** После этого нужна **ручная сортировка** групп на НКО и личные блоги!
 
 #### 1.2. Поиск блогеров (параллельный запуск)
@@ -77,8 +78,8 @@ python step3_vk_corpus.py
 
 **Важно:** Используется ручной список групп и пользователей фильтрация по ключевым словам не применяется
 формируются итоговые файлы:
-nko.csv
-blogs.csv
+- `nko.csv`
+- `blogs.csv`
 
 ### Этап 2: Анализ данных
 
@@ -114,14 +115,19 @@ python validate_weak_labels.py
 ### Этап 3: Визуализация
 
 ```bash
-python visualize_KEY_RESULTS.py
+python visualization_module.py
 ```
 
-**Создает 4 графика:**
-- `MAIN_comparison.png` - Распределение категорий
-- `MAIN_significance.png` - Статистическая значимость
-- `MAIN_lda_topics.png` - ТОП тем LDA
-- `MAIN_summary_all.png` - Сводка всех результатов
+
+Готовые графики находятся в папке `output/`:
+
+- `category_distribution.png` — распределение категорий  
+- `scores_comparison.png` — сравнение метрик/скоров  
+- `correlation_matrix.png` — матрица корреляций  
+- `statistical_tests.png` — результаты статистических тестов  
+- `text_length_distribution.png` — распределение длины текстов  
+- `multi_label_distribution.png` — распределение мульти-меток  
+- `category_cooccurrence.png` — совместная встречаемость категорий  
 
 ---
 
