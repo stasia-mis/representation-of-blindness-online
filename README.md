@@ -29,7 +29,8 @@ parsers/
 └── step3_vk_corpus.py       # Этап 3. Финальный сбор двух корпусов
 
 scripts/
-└── modelv12.py              # Основной анализ корпуса
+├── modelv12.py              # Основной анализ корпуса
+└── validate_weak_labels.py  # Валидация weak supervision
 
 visual/
 └── visualization_module.py  # Визуализация
