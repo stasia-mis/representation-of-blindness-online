@@ -23,13 +23,16 @@
 
 ```
 .
-├── step1_parse_VKv2.py                # Этап 1. Поиск страниц и блогов
-├── step2_blogger.py                   # Этап 2: поиск блогеров через подписчиков
-├── step3_vk_corpus.py                 # Этап 3: финальный сбор корпуса
-├── modelv12.py                        # Основной анализ корпуса
-├── validate_weak_labels.py            # Валидация weak supervision
-├── ПОД ВОПРОСОМ                       # Визуализация результатов
-└── README.md                          # Этот файл
+parsers/
+├── step1_parse_VKv2.py      # Этап 1. Поиск страниц и блогов
+├── step2_blogger.py         # Этап 2. Поиск блогеров через подписчиков
+└── step3_vk_corpus.py       # Этап 3. Финальный сбор корпуса
+
+scripts/
+└── modelv12.py              # Основной анализ корпуса
+
+README.md
+analysis_results.md
 ```
 
 ---
