@@ -44,7 +44,7 @@
 ### Зависимости
 
 ```bash
-pip install pandas numpy scikit-learn scipy gensim nltk pymorphy2 vk_api tqdm matplotlib seaborn
+pip install pandas numpy scikit-learn scipy gensim nltk pymorphy2 pymorphy2-dicts-ru vk_api tqdm matplotlib seaborn
 ```
 
 
